@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    user-select: none;
+}
+
+body {
+    /* Wallpaper bernuansa lanskap alam & pertambangan ramah lingkungan */
+    background: url('https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* TOP MENU BAR */
+.macos-menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 13px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.menu-left, .menu-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.apple-logo {
+    font-size: 15px;
+}
+
+.menu-item {
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.menu-item:hover, .menu-item.active {
+    opacity: 1;
+}
+
+/* DESKTOP AREA */
+.desktop-container {
+    width: 100%;
+    height: calc(100vh - 28px);
+    margin-top: 28px;
+    position: relative;
+    padding: 20px;
+}
+
+.desktop-icons {
+    display: grid;
+    grid-template-columns: repeat(1, 90px);
+    gap: 20px;
+}
+
+.desktop-icon {
+    width: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.desktop-icon:hover {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+}
+
+.desktop-icon i {
+    font-size: 38px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+}
+
+.desktop-icon span {
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    font-weight: 500;
+}
+
+/* MACOS WINDOW */
+.macos-window {
+    position: absolute;
+    top: 40px;
+    left: 130px;
+    width: 580px;
+    background: rgba(24, 24, 27, 0.82);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 10;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.macos-window.minimized {
+    transform: scale(0.1) translateY(500px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.window-header {
+    height: 38px;
+    background: rgba(39, 39, 42, 0.7);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.window-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.window-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-close { background: #ff5f56; border: 1px solid #e0443e; }
+.btn-minimize { background: #ffbd2e; border: 1px solid #dea123; }
+.btn-maximize { background: #27c93f; border: 1px solid #1aab29; }
+
+.window-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f1f5f9;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.window-body {
+    padding: 24px;
+    color: #fff;
+    max-height: 440px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.window-body h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #60a5fa;
+}
+
+.window-body h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: #e2e8f0;
+}
+
+.window-body p {
+    color: #cbd5e1;
+}
+
+.info-card {
+    display: flex;
+    gap: 15px;
+    background: rgba(255,255,255,0.06);
+    padding: 16px;
+    border-radius: 12px;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.info-card i {
+    font-size: 30px;
+    color: #3b82f6;
+}
+
+.styled-list {
+    margin-left: 20px;
+    margin-top: 8px;
+    color: #cbd5e1;
+}
+
+.styled-list li {
+    margin-bottom: 6px;
+}
+
+/* Grid Pilar Bisnis */
+.grid-pilar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.pilar-card {
+    background: rgba(255,255,255,0.06);
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.pilar-card i {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #f59e0b;
+}
+
+.pilar-card h4 {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.pilar-card p {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* ESG Grid */
+.esg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.esg-box {
+    background: rgba(255,255,255,0.06);
+    padding: 14px;
+    border-radius: 10px;
+    border-left: 4px solid #10b981;
+}
+
+.esg-box h4 {
+    color: #34d399;
+    margin-bottom: 4px;
+}
+
+.esg-box p {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+/* Berita */
+.news-item {
+    margin-bottom: 12px;
+}
+
+.news-date {
+    font-size: 11px;
+    color: #f43f5e;
+    font-weight: 600;
+}
+
+.news-item h4 {
+    font-size: 14px;
+    color: #fff;
+    margin: 3px 0;
+}
+
+.news-item p {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 12px 0;
+}
+
+/* DOCK BAWAH */
+.macos-dock {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 22px;
+    padding: 8px 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.dock-item {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.dock-item:hover {
+    transform: translateY(-8px) scale(1.15);
+}
+
+.dock-item i {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.dock-separator {
+    width: 1px;
+    height: 35px;
+    background: rgba(255,255,255,0.3);
+}

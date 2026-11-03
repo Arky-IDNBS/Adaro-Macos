@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Adaro Indonesia - Complete macOS Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome untuk ikon bergaya macOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- TOP MENU BAR (ALA MAC) -->
+    <div class="macos-menubar">
+        <div class="menu-left">
+            <span class="apple-logo"><i class="fa-brands fa-apple"></i></span>
+            <span class="menu-item active"><b>Adaro OS Enterprise</b></span>
+            <span class="menu-item" onclick="openWindow('aboutWindow')">Tentang</span>
+            <span class="menu-item" onclick="openWindow('businessWindow')">Bisnis</span>
+            <span class="menu-item" onclick="openWindow('sustainabilityWindow')">Keberlanjutan</span>
+            <span class="menu-item" onclick="openWindow('newsWindow')">Media</span>
+            <span class="menu-item" onclick="openWindow('investorWindow')">Investor</span>
+            <span class="menu-item" onclick="openWindow('contactWindow')">Kontak</span>
+        </div>
+        <div class="menu-right">
+            <span id="wifiStatus"><i class="fa-solid fa-wifi"></i></span>
+            <span id="batteryStatus"><i class="fa-solid fa-battery-full"></i> 100%</span>
+            <span id="clockDisplay">09:41 AM</span>
+        </div>
+    </div>
+
+    <!-- DESKTOP AREA -->
+    <div class="desktop-container">
+        
+        <!-- Ikon-ikon Desktop -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" onclick="openWindow('aboutWindow')">
+                <i class="fa-solid fa-building-shield" style="color: #3b82f6;"></i>
+                <span>Profil & Visi</span>
+            </div>
+            <div class="desktop-icon" onclick="openWindow('businessWindow')">
+                <i class="fa-solid fa-fire-flame-curved" style="color: #f59e0b;"></i>
+                <span>Pilar Bisnis</span>
+            </div>
+            <div class="desktop-icon" onclick="openWindow('sustainabilityWindow')">
+                <i class="fa-solid fa-seedling" style="color: #10b981;"></i>
+                <span>Keberlanjutan & ESG</span>
+            </div>
+            <div class="desktop-icon" onclick="openWindow('newsWindow')">
+                <i class="fa-solid fa-newspaper" style="color: #ec4899;"></i>
+                <span>Berita & Media</span>
+            </div>
+            <div class="desktop-icon" onclick="openWindow('investorWindow')">
+                <i class="fa-solid fa-chart-line" style="color: #8b5cf6;"></i>
+                <span>Hubungan Investor</span>
+            </div>
+            <div class="desktop-icon" onclick="openWindow('contactWindow')">
+                <i class="fa-solid fa-envelope-open-text" style="color: #ef4444;"></i>
+                <span>Kontak Kami</span>
+            </div>
+        </div>
+
+        <!-- 1. JENDELA TENTANG KAMI / PROFIL -->
+        <div class="macos-window" id="aboutWindow">
+            <div class="window-header">
+                <div class="window-buttons">
+                    <span class="btn-close" onclick="closeWindow('aboutWindow')"></span>
+                    <span class="btn-minimize" onclick="minimizeWindow('aboutWindow')"></span>
+                    <span class="btn-maximize" onclick="maximizeWindow('aboutWindow')"></span>
+                </div>
+                <div class="window-title">Tentang PT Adaro Indonesia</div>
+            </div>
+            <div class="window-body">
+                <h2>Energi untuk Menghidupkan Nusantara</h2>
+                <p>PT Adaro Indonesia adalah anak perusahaan utama PT Adaro Energy Indonesia Tbk, salah satu produsen batubara termal terbesar di belahan bumi selatan. Kami beroperasi secara terintegrasi dari penambangan hingga kelistrikan.</p>
+                <br>
+                <div class="info-card">
+                    <i class="fa-solid fa-gem"></i>
+                    <div>
+                        <h4>Visi Perusahaan</h4>
+                        <p>Menjadi perusahaan pertambangan dan energi terkemuka di Asia Tenggara yang mengutamakan keunggulan operasional, keselamatan, dan tanggung jawab lingkungan.</p>
+                    </div>
+                </div>
+                <br>
+                <h3>Nilai-Nilai Inti (Adaro Values)</h3>
+                <ul class="styled-list">
+                    <li><b>Integritas:</b> Bertindak jujur dan menjunjung tinggi etika bisnis.</li>
+                    <li><b>Kepedulian:</b> Peduli terhadap keselamatan kerja, masyarakat, dan lingkungan.</li>
+                    <li><b>Keunggulan:</b> Selalu berinovasi dan memberikan hasil terbaik.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. JENDELA PILAR BISNIS -->
+        <div class="macos-window" id="businessWindow" style="top: 50px; left: 100px;">
+            <div class="window-header">
+                <div class="window-buttons">
+                    <span class="btn-close" onclick="closeWindow('businessWindow')"></span>
+                    <span class="btn-minimize" onclick="minimizeWindow('businessWindow')"></span>
+                    <span class="btn-maximize" onclick="maximizeWindow('businessWindow')"></span>
+                </div>
+                <div class="window-title">Pilar Bisnis Adaro (Adaro Liveable Chain)</div>
+            </div>
+            <div class="window-body">
+                <h3>Transformasi Menuju Energi Bersih & Terintegrasi</h3>
+                <p>Model bisnis Adaro dirancang secara vertikal untuk memastikan efisiensi tinggi di setiap lini rantai pasokan energi.</p>
+                
+                <div class="grid-pilar">
+                    <div class="pilar-card">
+                        <i class="fa-solid fa-mountain"></i>
+                        <h4>Adaro Energy</h4>
+                        <p>Pertambangan batubara efisien berskala masif di Kalimantan Selatan.</p>
+                    </div>
+                    <div class="pilar-card">
+                        <i class="fa-solid fa-ship"></i>
+                        <h4>Adaro Logistics</h4>
+                        <p>Pengangkutan batubara terintegrasi melalui jalur sungai dan pelabuhan khusus.</p>
+                    </div>
+                    <div class="pilar-card">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h4>Adaro Power</h4>
+                        <p>Pembangkit listrik tenaga uap efisiensi tinggi & investasi energi terbarukan.</p>
+                    </div>
+                    <div class="pilar-card">
+                        <i class="fa-solid fa-water"></i>
+                        <h4>Adaro Water</h4>
+                        <p>Penyediaan infrastruktur pengolahan air bersih untuk industri dan masyarakat.</p>
+                    </div>
+                    <div class="pilar-card">
+                        <i class="fa-solid fa-solar-panel"></i>
+                        <h4>Adaro Green</h4>
+                        <p>Inisiatif pengembangan energi hijau, hidrolik, dan panel surya.</p>
+                    </div>
+                    <div class="pilar-card">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <h4>Adaro Foundation</h4>
+                        <p>Program tanggung jawab sosial korporat (CSR) di bidang pendidikan & kesehatan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. JENDELA KEBERLANJUTAN & ESG -->
+        <div class="macos-window" id="sustainabilityWindow" style="top: 80px; left: 150px;">
+            <div class="window-header">
+                <div class="window-buttons">
+                    <span class="btn-close" onclick="closeWindow('sustainabilityWindow')"></span>
+                    <span class="btn-minimize" onclick="minimizeWindow('sustainabilityWindow')"></span>
+                    <span class="btn-maximize" onclick="maximizeWindow('sustainabilityWindow')"></span>
+                </div>
+                <div class="window-title">Komitmen Keberlanjutan & ESG</div>
+            </div>
+            <div class="window-body">
+                <h2>Environmental, Social, and Governance (ESG)</h2>
+                <p>Adaro berkomitmen menyeimbangkan pertumbuhan ekonomi dengan kelestarian lingkungan dan kesejahteraan sosial jangka panjang.</p>
+                
+                <div class="esg-grid" style="margin-top: 15px;">
+                    <div class="esg-box">
+                        <i class="fa-solid fa-tree"></i>
+                        <h4>Environmental</h4>
+                        <p>Reklamasi lahan bekas tambang secara progresif, konservasi keanekaragaman hayati, dan efisiensi emisi karbon.</p>
+                    </div>
+                    <div class="esg-box">
+                        <i class="fa-solid fa-users"></i>
+                        <h4>Social</h4>
+                        <p>Pemberdayaan ekonomi lokal, program beasiswa pendidikan, peningkatan fasilitas kesehatan, dan keselamatan kerja mutlak.</p>
+                    </div>
+                    <div class="esg-box">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h4>Governance</h4>
+                        <p>Penerapan tata kelola perusahaan yang bersih, transparan, adil, dan akuntabel sesuai standar internasional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. JENDELA BERITA & MEDIA -->
+        <div class="macos-window" id="newsWindow" style="top: 110px; left: 200px;">
+            <div class="window-header">
+                <div class="window-buttons">
+                    <span class="btn-close" onclick="closeWindow('newsWindow')"></span>
+                    <span class="btn-minimize" onclick="minimizeWindow('newsWindow')"></span>
+                    <span class="btn-maximize" onclick="maximizeWindow('newsWindow')"></span>
+                </div>
+                <div class="window-title">Berita & Publikasi Adaro</div>
+            </div>
+            <div class="window-body">
+                <h3>Kabar Terbaru Korporat</h3>
+                <div class="news-item">
+                    <span class="news-date">Oktober 2026</span>
+                    <h4>Adaro Perkuat Transisi Menuju Energi Hijau dan Diversifikasi Bisnis Non-Batubara</h4>
+                    <p>Komitmen berkelanjutan terus direalisasikan melalui pembangunan proyek energi terbarukan di berbagai wilayah operasional.</p>
+                </div>
+                <hr class="divider">
+                <div class="news-item">
+                    <span class="news-date">September 2026</span>
+                    <h4>Penghargaan Subroto diraih atas Keunggulan Keselamatan Pertambangan</h4>
+                    <p>Konsistensi menjaga standar K3 (Kesehatan dan Keselamatan Kerja) mengantarkan Adaro meraih apresiasi tertinggi dari Kementerian ESDM.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. JENDELA HUBUNGAN INVESTOR -->
+        <div class="macos-window" id="investorWindow" style="top: 140px; left: 250px;">
+            <div class="window-header">
+                <div class="window-buttons">
+                    <span class="btn-close" onclick="closeWindow('investorWindow')"></span>
+                    <span class="btn-minimize" onclick="minimizeWindow('investorWindow')"></span>
+                    <span class="btn-maximize" onclick="maximizeWindow('investorWindow')"></span>
+                </div>
+                <div class="window-title">Hubungan Investor (ADRO)</div>
+            </div>
+            <div class="window-body">
+                <h3>Informasi Finansial & Saham</h3>
+                <p>PT Adaro Energy Indonesia Tbk (Kode Saham: <b>ADRO</b>) berkomitmen untuk selalu memberikan nilai tambah yang optimal bagi para pemegang saham melalui kinerja keuangan yang solid.</p>
+                <br>
+                <div class="info-card">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <div>
+                        <h4>Laporan Tahunan & Kinerja</h4>
+                        <p>Akses laporan keuangan triwulanan, ringkasan saham, dan paparan publik terbaru melalui portal resmi investor relations kami.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. JENDELA KONTAK KAMI -->
+        <div class="macos-window" id="contactWindow" style="top: 170px; left: 300px;">
+            <div class="window-header">
+                <div class="window-buttons">
+                    <span class="btn-close" onclick="closeWindow('contactWindow')"></span>
+                    <span class="btn-minimize" onclick="minimizeWindow('contactWindow')"></span>
+                    <span class="btn-maximize" onclick="maximizeWindow('contactWindow')"></span>
+                </div>
+                <div class="window-title">Kontak Korporat Adaro</div>
+            </div>
+            <div class="window-body">
+                <h3>Kantor Pusat</h3>
+                <p style="margin-top: 8px;"><i class="fa-solid fa-location-dot" style="color:#ef4444;"></i> Menara Imperium, Lantai 27, Jl. H.R. Rasuna Said, Kuningan, Jakarta Selatan 12980</p>
+                <p style="margin-top: 8px;"><i class="fa-solid fa-envelope" style="color:#3b82f6;"></i> corsec@adaro.com</p>
+                <p style="margin-top: 8px;"><i class="fa-solid fa-phone" style="color:#10b981;"></i> +62 21 521 1265</p>
+                <p style="margin-top: 8px;"><i class="fa-solid fa-fax" style="color:#f59e0b;"></i> +62 21 521 1266</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- DOCK BAWAH (ALA MACOS) -->
+    <div class="macos-dock">
+        <div class="dock-item" onclick="openWindow('aboutWindow')" title="Tentang Kami">
+            <i class="fa-solid fa-building-shield" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);"></i>
+        </div>
+        <div class="dock-item" onclick="openWindow('businessWindow')" title="Pilar Bisnis">
+            <i class="fa-solid fa-fire-flame-curved" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></i>
+        </div>
+        <div class="dock-item" onclick="openWindow('sustainabilityWindow')" title="Keberlanjutan ESG">
+            <i class="fa-solid fa-seedling" style="background: linear-gradient(135deg, #10b981, #047857);"></i>
+        </div>
+        <div class="dock-item" onclick="openWindow('newsWindow')" title="Berita">
+            <i class="fa-solid fa-newspaper" style="background: linear-gradient(135deg, #ec4899, #be185d);"></i>
+        </div>
+        <div class="dock-item" onclick="openWindow('investorWindow')" title="Investor">
+            <i class="fa-solid fa-chart-line" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></i>
+        </div>
+        <div class="dock-item" onclick="openWindow('contactWindow')" title="Kontak">
+            <i class="fa-solid fa-envelope-open-text" style="background: linear-gradient(135deg, #ef4444, #b91c1c);"></i>
+        </div>
+        <div class="dock-separator"></div>
+        <div class="dock-item" onclick="alert('Adaro macOS Enterprise v2.0 - All Sections Loaded Successfully')" title="System Info">
+            <i class="fa-brands fa-apple" style="background: linear-gradient(135deg, #64748b, #334155);"></i>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
